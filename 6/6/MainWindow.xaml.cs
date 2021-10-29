@@ -24,5 +24,40 @@ namespace _6
         {
             InitializeComponent();
         }
+        Triangle triangle = new Triangle(0);
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Info_Click(object sender, RoutedEventArgs e)
+        {
+            InformationWindow Information = new InformationWindow();
+            Information.Show();
+        }
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Int32.TryParse(e.Text, out int val) && e.Text != "-")
+            {
+                e.Handled = true; // отклоняем ввод
+            }
+        }
+        private void IncreaseLengths2(object sender, RoutedEventArgs e)
+        {
+            triangle.SetParams(Convert.ToInt32(length1.Text), Convert.ToInt32(length2.Text), Convert.ToInt32(length3.Text));
+            triangle.IncreaseLengths();
+            length1.Text = triangle.length1.ToString();
+            length2.Text = triangle.length2.ToString();
+            length3.Text = triangle.length3.ToString();
+        }
+
+        private void Check(object sender, RoutedEventArgs e)
+        {
+            triangle.SetParams(Convert.ToInt32(length1.Text), Convert.ToInt32(length2.Text), Convert.ToInt32(length3.Text));
+            if (triangle.TriangleCheck())
+                MessageBox.Show("треугольник с данными сторонами может существовать");
+            else
+                MessageBox.Show("треугольник с данными сторонами не может существовать");
+        }
     }
 }

@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="треугольник" Height="352" Width="649" ResizeMode="NoResize">
     <Grid>
+        <InkCanvas IsEnabled="False">
+            <Image Source="background.png" Stretch="Fill" Height="336" Width="649"/>
+        </InkCanvas>
 
+        <GroupBox Margin="15" BorderBrush="{x:Null}" BorderThickness="0,2" Background="#33FFFFFF" >
+            <Grid>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="выход" Margin="0,240,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="140" Click="Close_Click"/>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="о программе" HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Width="140" Click="Info_Click"/>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="проверить" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="140" Click="Check"/>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="увеличить в двое" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="140" Click="IncreaseLengths2"/>
+                <StackPanel Orientation="Horizontal" Height="117" Width="297">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100" Margin="-2,0,0,0">
+                            <Label Style="{DynamicResource LabelStyle1}" Margin="1" Content="сторона 1" Foreground="#FFC6E0FF" FontSize="15"/>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100" Margin="-2,0,0,0">
+                            <TextBox x:Name="length1" Style="{DynamicResource TextBoxStyle1}" Text="0" MaxLength="6" FontSize="25" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100" >
+                            <Label Style="{DynamicResource LabelStyle1}" Margin="1" Content="сторона 2" Foreground="#FFC6E0FF" FontSize="15"/>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100">
+                            <TextBox x:Name="length2" Style="{DynamicResource TextBoxStyle1}" Text="0" MaxLength="6" FontSize="25" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100">
+                            <Label Style="{DynamicResource LabelStyle1}" Margin="1" Content="сторона 3" Foreground="#FFC6E0FF" FontSize="15"/>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="AliceBlue" Height="60" Width="100">
+                            <TextBox x:Name="length3" Style="{DynamicResource TextBoxStyle1}" Text="0" MaxLength="6" FontSize="25" VerticalContentAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
