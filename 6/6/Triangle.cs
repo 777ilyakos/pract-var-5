@@ -66,5 +66,39 @@ namespace _6
             length2 *= 2;
             length3 *= 2;
         }
+        public static Triangle operator ++(Triangle triangle)
+        {
+            triangle.length1++;
+            triangle.length2++;
+            triangle.length3++;
+            return triangle;
+        }
+        public static Triangle operator --(Triangle triangle)
+        {
+            triangle.length1--;
+            triangle.length2--;
+            triangle.length3--;
+            return triangle;
+        }
+        public static bool operator true(Triangle triangle)
+        {
+            if (triangle.length1 + triangle.length2 <= triangle.length3)
+                return false;
+            if (triangle.length1 + triangle.length3 <= triangle.length2)
+                return false;
+            if (triangle.length3 + triangle.length2 <= triangle.length1)
+                return false;
+            return true;
+        }
+        public static bool operator false(Triangle triangle)
+        {
+            if (triangle.length1 + triangle.length2 <= triangle.length3)
+                return true;
+            if (triangle.length1 + triangle.length3 <= triangle.length2)
+                return true;
+            if (triangle.length3 + triangle.length2 <= triangle.length1)
+                return true;
+            return false;
+        }
     }
 }
