@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_6"
         mc:Ignorable="d"
+        Background="Black"
         Title="треугольник" Height="352" Width="649" ResizeMode="NoResize">
     <Grid>
-        <InkCanvas IsEnabled="False">
+        <!--<InkCanvas IsEnabled="True">
             <Image Source="background.png" Stretch="Fill" Height="336" Width="649"/>
-        </InkCanvas>
+        </InkCanvas>-->
 
         <GroupBox Margin="15" BorderBrush="{x:Null}" BorderThickness="0,2" Background="#33FFFFFF" >
             <Grid>
                 <Button Style="{DynamicResource ButtonStyle1}" Content="выход" Margin="0,240,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="140" Click="Close_Click"/>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="+" Margin="458,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="27" Click="Plus_Click"/>
+                <Button Style="{DynamicResource ButtonStyle1}" Content="-" Margin="458,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="27" Click="Minus_Click"/>
                 <Button Style="{DynamicResource ButtonStyle1}" Content="о программе" HorizontalAlignment="Center" Margin="0,213,0,0" VerticalAlignment="Top" Width="140" Click="Info_Click"/>
                 <Button Style="{DynamicResource ButtonStyle1}" Content="проверить" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="140" Click="Check"/>
                 <Button Style="{DynamicResource ButtonStyle1}" Content="увеличить в двое" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="140" Click="IncreaseLengths2"/>

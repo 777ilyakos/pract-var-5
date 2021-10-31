@@ -37,10 +37,11 @@ namespace _6
         }
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!Int32.TryParse(e.Text, out int val) && e.Text != "-")
+            if (!Int32.TryParse(e.Text, out int val))
             {
                 e.Handled = true; // отклоняем ввод
             }
+            
         }
         private void IncreaseLengths2(object sender, RoutedEventArgs e)
         {
@@ -54,10 +55,28 @@ namespace _6
         private void Check(object sender, RoutedEventArgs e)
         {
             triangle.SetParams(Convert.ToInt32(length1.Text), Convert.ToInt32(length2.Text), Convert.ToInt32(length3.Text));
-            if (triangle.TriangleCheck())
+            if (triangle)
                 MessageBox.Show("треугольник с данными сторонами может существовать");
             else
                 MessageBox.Show("треугольник с данными сторонами не может существовать");
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            triangle.SetParams(Convert.ToInt32(length1.Text), Convert.ToInt32(length2.Text), Convert.ToInt32(length3.Text));
+            triangle--;
+            length1.Text = triangle.length1.ToString();
+            length2.Text = triangle.length2.ToString();
+            length3.Text = triangle.length3.ToString();
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            triangle.SetParams(Convert.ToInt32(length1.Text), Convert.ToInt32(length2.Text), Convert.ToInt32(length3.Text));
+            triangle++;
+            length1.Text = triangle.length1.ToString();
+            length2.Text = triangle.length2.ToString();
+            length3.Text = triangle.length3.ToString();
         }
     }
 }
