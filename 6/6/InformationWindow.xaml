@@ -1,0 +1,22 @@
+﻿<Window x:Class="_6.InformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_6"
+        mc:Ignorable="d"
+        Title="InformationWindow" Height="228" Width="744">
+   
+    <Grid>
+        <InkCanvas IsEnabled="False">
+            <Image Source="background.png" Stretch="Fill" Height="398" Width="840"/>
+        </InkCanvas>
+        <Label Style="{DynamicResource LabelStyle1}" Margin="1"  Content="
+ИСП-31 Косоуров Илья практическая 5 вариант 5&#10;           
+    Использовать класс Triangle (треугольник) с полями-сторонами. Разработать&#10;
+операцию для определения возможности существование треугольника с заданными&#10;
+сторонами true/false. Разработать операции для увеличения/уменьшения сторон на 1.
+               " 
+               Foreground="#FFC6E0FF" FontSize="16" Background="#4C000000"/>
+    </Grid>
+</Window>
