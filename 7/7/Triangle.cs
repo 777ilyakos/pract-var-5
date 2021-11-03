@@ -17,12 +17,23 @@ namespace _7
 {
     class Triangle
     {
-        public Triangle() { }
+        public Triangle() 
+        {
+            length1 = 0;
+            length1 = 0;
+            length1 = 0;
+        }
         public Triangle(int lengths)
         {
             length1 = lengths;
             length2 = lengths;
             length3 = lengths;
+        }
+        public Triangle(int length_1, int length_2, int length_3)
+        {
+            length1 = length_1;
+            length2 = length_2;
+            length3 = length_3;
         }
         public int length1 { get; set; }
         public int length2 { get; set; }

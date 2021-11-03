@@ -8,9 +8,9 @@
         Background="Black"
         Title="треугольник" Height="352" Width="649" ResizeMode="NoResize">
     <Grid>
-        <!--<InkCanvas IsEnabled="True">
+        <InkCanvas IsEnabled="True" Background="Black">
             <Image Source="background.png" Stretch="Fill" Height="336" Width="649"/>
-        </InkCanvas>-->
+        </InkCanvas>
 
         <GroupBox Margin="15" BorderBrush="{x:Null}" BorderThickness="0,2" Background="#33FFFFFF" >
             <Grid>

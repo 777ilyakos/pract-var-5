@@ -20,16 +20,15 @@ namespace _7
     /// </summary>
     public partial class MainWindow : Window
     {
+        Equilateral triangle = new Equilateral();
         public MainWindow()
         {
             InitializeComponent();
         }
-        Triangle triangle = new Triangle(0);
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             InformationWindow Information = new InformationWindow();
