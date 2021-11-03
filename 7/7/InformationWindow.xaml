@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_7"
         mc:Ignorable="d"
-        Title="InformationWindow" Height="228" Width="744">
+        Title="InformationWindow" Height="228" Width="744" Background="Black">
    
     <Grid>
-        <InkCanvas IsEnabled="False">
+        <InkCanvas IsEnabled="False" Background="Black">
             <Image Source="background.png" Stretch="Fill" Height="398" Width="840"/>
         </InkCanvas>
         <Label Style="{DynamicResource LabelStyle1}" Margin="1"  Content="
