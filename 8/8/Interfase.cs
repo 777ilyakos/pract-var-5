@@ -17,6 +17,6 @@ namespace _8
         int Next { get; }
         int GetNext();
         void Reset();
-        void SetStsrt(int startValue);
+        void SetStart(int startValue);
     }
 }
