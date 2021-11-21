@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <DataGrid Margin="10,74,10,0" 
+                  x:Name="table" 
+                  IsReadOnly="True"  
+                  Height="289" 
+                  VerticalAlignment="Top" 
+                  MinColumnWidth="50"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding DataBase}">
+            <DataGrid.Columns>
+                <DataGridTextColumn     Header="Фамилия"             Binding="{Binding LastName}"/>
+                <DataGridTextColumn     Header="Имя"                 Binding="{Binding FirstName}"/>
+                <DataGridTextColumn     Header="Отчество"            Binding="{Binding SecondName}"/>
+                <DataGridTextColumn     Header="пол"                 Binding="{Binding Gender}"/>
+                <DataGridCheckBoxColumn Header="дожность"            Binding="{Binding Post}"/>
+                <DataGridTextColumn     Header="Опыт работы (мес.)"  Binding="{Binding WorkExperience}"/>
+                <DataGridTextColumn     Header="ЗП"                  Binding="{Binding Salary}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
