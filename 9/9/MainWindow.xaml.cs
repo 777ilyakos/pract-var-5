@@ -23,18 +23,18 @@ namespace _9
         public Genders gender;
         public int workExperieence;
         public int salary;
-        Student(string  FirstName       ,
-                string  SecondName      ,
-                string  LastName        ,
-                Genders Gender          ,
-                int     WorkExperieence ,
-                int     Salary          )
+        Student(string FirstName,
+                string SecondName,
+                string LastName,
+                Genders Gender,
+                int WorkExperieence,
+                int Salary)
         {
-             firstName=        FirstName       ;
-             secondName =      SecondName      ;
-             lastName=         LastName        ;
-             gender=           Gender          ;
-             workExperieence=  WorkExperieence ;
+            firstName = FirstName;
+            secondName = SecondName;
+            lastName = LastName;
+            gender = Gender;
+            workExperieence = WorkExperieence;
             salary = Salary;
         }
     }
