@@ -17,13 +17,13 @@
                   CanUserAddRows="False"
                   ItemsSource="{Binding DataBase}">
             <DataGrid.Columns>
-                <DataGridTextColumn     Header="Фамилия"             Binding="{Binding LastName}"/>
-                <DataGridTextColumn     Header="Имя"                 Binding="{Binding FirstName}"/>
-                <DataGridTextColumn     Header="Отчество"            Binding="{Binding SecondName}"/>
-                <DataGridTextColumn     Header="пол"                 Binding="{Binding Gender}"/>
-                <DataGridCheckBoxColumn Header="дожность"            Binding="{Binding Post}"/>
-                <DataGridTextColumn     Header="Опыт работы (мес.)"  Binding="{Binding WorkExperience}"/>
-                <DataGridTextColumn     Header="ЗП"                  Binding="{Binding Salary}"/>
+                <DataGridTextColumn Header="Фамилия"             Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Имя"                 Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Отчество"            Binding="{Binding SecondName}"/>
+                <DataGridTextColumn Header="пол"                 Binding="{Binding Gender}"/>
+                <DataGridTextColumn Header="дожность"            Binding="{Binding Post}"/>
+                <DataGridTextColumn Header="Опыт работы (мес.)"  Binding="{Binding WorkExperience}"/>
+                <DataGridTextColumn Header="ЗП"                  Binding="{Binding Salary}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
