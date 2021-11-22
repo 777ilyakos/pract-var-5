@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="AddEntry" Height="500" Width="300">
     <Grid>
-        <TextBlock Text="фамилия" FontSize="24" Margin="20,20,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="имя" FontSize="24" Margin="20,65,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="очество" FontSize="24" Margin="20,110,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="пол" FontSize="24" Margin="20,155,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="должность" FontSize="24" Margin="20,200,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="стаж" FontSize="24" Margin="20,245,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Text="зп" FontSize="24" Margin="20,280,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="фамилия" FontSize="24" Margin="20,20,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="имя" FontSize="24" Margin="20,65,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="очество" FontSize="24" Margin="20,110,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="пол" FontSize="24" Margin="20,155,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="должность" FontSize="24" Margin="20,200,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="стаж" FontSize="24" Margin="20,245,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Text="зп" FontSize="24" Margin="20,290,0,0" Height="35" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         
     </Grid>
 </Window>
