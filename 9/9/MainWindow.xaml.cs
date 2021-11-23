@@ -31,5 +31,12 @@ namespace _9
             this.DataContext = _viewModel;
             _viewModel.DataBase.Add(new Worker(1));
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            AddEntry blank = new AddEntry(default);
+            blank.ShowDialog();
+            _viewModel.DataBase.Add(blank.Record);
+        }
     }
 }

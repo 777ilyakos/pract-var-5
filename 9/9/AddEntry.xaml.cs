@@ -49,7 +49,9 @@ namespace _9
             Record.Gender = Gender.Text;
             Record.Post = Post.Text;
             Record.WorkExperience = Convert.ToInt32(WorkExperience.Text);
-            Record.WorkExperience = Convert.ToInt32(WorkExperience.Text);
+            Record.Salary = Convert.ToInt32(Salary.Text);
+
+            this.Close();
         }
     }
 }

@@ -26,5 +26,6 @@
                 <DataGridTextColumn Header="ЗП"                  Binding="{Binding Salary}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="добавить" FontSize="24" Margin="20,20,20,20" Height="40" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Add_Click"/>
     </Grid>
 </Window>
