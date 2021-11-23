@@ -17,9 +17,39 @@ namespace _9
     /// </summary>
     public partial class AddEntry : Window
     {
-        public AddEntry()
+        public Worker Record;
+        public AddEntry(Worker record)
         {
             InitializeComponent();
+        }
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void AddRecord_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder errors = new StringBuilder();
+            if (LastName.Text.Length == 0) errors.AppendLine("Введите фамилию");
+            if (FirstName.Text.Length == 0) errors.AppendLine("Введите имя");
+            if (SecondName.Text.Length == 0) errors.AppendLine("Введите отчество");
+            if (Gender.Text.Length == 0) errors.AppendLine("Введите пол человека");
+            if (Post.Text.Length == 0) errors.AppendLine("Введите должность работника");
+            if (!int.TryParse(WorkExperience.Text, out _)) errors.AppendLine("Введите корректный стаж работы в месяцах");
+            if (!int.TryParse(Salary.Text, out _)) errors.AppendLine("Введите корректную заработную плату в рублях");
+
+            if (errors.Length != 0)
+            {
+                MessageBox.Show(errors.ToString(), "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            Record.LastName = LastName.Text;
+            Record.FirstName = FirstName.Text;
+            Record.SecondName = SecondName.Text;
+            Record.Gender = Gender.Text;
+            Record.Post = Post.Text;
+            Record.WorkExperience = Convert.ToInt32(WorkExperience.Text);
+            Record.WorkExperience = Convert.ToInt32(WorkExperience.Text);
         }
     }
 }
