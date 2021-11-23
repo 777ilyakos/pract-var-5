@@ -15,14 +15,22 @@ using System.Windows.Shapes;
 
 namespace _10
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private List<int> _array = new List<int>();
         public MainWindow()
         {
             InitializeComponent();
+            listItem.ItemsSource = _array;
+
+        }
+        public void AddRandomIntInCollection(ICollection<int> collection, int count, int minValue, int maxValue)
+        {
+            Random random = new Random();
+            for (int i = 0; i < count; i++)
+            {
+                collection.Add(random.Next(minValue, maxValue));
+            }
         }
     }
 }

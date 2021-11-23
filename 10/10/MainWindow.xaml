@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <ListBox x:Name="listItem" ItemsSource="{Binding _array}" Margin="30,30,690,30"/>
     </Grid>
 </Window>
