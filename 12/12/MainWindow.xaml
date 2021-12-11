@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_12"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="Практическая №12" MinHeight="500" MinWidth="500" Height="293"  Width="500" ResizeMode="CanMinimize">
+    <Grid >
+        <Menu VerticalAlignment="Top" BorderThickness="1" BorderBrush="Gray" Margin="-1, 0, -1, 0">
+            <MenuItem Header="информация" HorizontalContentAlignment="Center" Height="25" MinWidth="150" FontSize="15" Padding="35, 0, 0, 0" ToolTip="О программе" Click="Info_Click"/>
+            <MenuItem Header="выход" HorizontalContentAlignment="Center" Height="25" MinWidth="100" FontSize="15" Padding="35, 0, 0, 0" ToolTip="Выход" Click="Exit_Click"/>
+        </Menu>
+        <TabControl x:Name="pages" Margin="0, 30, 0, 35" FontSize="16">
+            <TabItem  Width="110" >
+                <TabItem.Header>
+                    <TextBlock Text="Задание 1" ToolTip="Найти объем параллелепипеда и его площадь поверхности."/>
+                </TabItem.Header>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="первоночальные данные" Margin="10">
+                        <StackPanel Margin="10">
+                            <Label Content="длинна стороны A"/>
+                            <TextBox x:Name="textA" Text="" MaxLength="6" Margin="10,0,0,5" Width="105" HorizontalAlignment="Left"/>
+                            <Label Content="длинна стороны B"/>
+                            <TextBox x:Name="textB" Text="" MaxLength="6" Margin="10,0,0,5" Width="105" HorizontalAlignment="Left"/>
+                            <Label Content="длинна стороны C"/>
+                            <TextBox x:Name="textC" Text="" MaxLength="6" Margin="10,0,0,5" Width="105" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Результат" Margin="10">
+                        <StackPanel>
+                            <Button Content="Рассчитать" Margin="40, 10, 40, 10" MinHeight="30" Click="Task1_Click"/>
+                            <Label x:Name="task1V" Content="обьём: " HorizontalAlignment="Left" Margin="29,0,0,0"/>
+                            <Label x:Name="task1S" Content="площадь: " HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem  Width="110">
+                <TabItem.Header>
+                    <TextBlock Text="Задание 2" ToolTip="Найти сумму и произведение 2-х значного числа цифр"/>
+                </TabItem.Header>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="первоночальные данные" Margin="10">
+                        <StackPanel Margin="10">
+                            <Label Content="то самое число"/>
+                            <TextBox x:Name="task2Count" Text="" MaxLength="2" Margin="10,0,0,5" Width="105" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Результат" Margin="10">
+                        <StackPanel>
+                            <Button Content="Рассчитать" Margin="40, 10, 40, 10" MinHeight="30" Click="Task2_Click"/>
+                            <Label x:Name="task2Sum" Content="сумма: " HorizontalAlignment="Left" Margin="70,0,0,0"/>
+                            <Label x:Name="task2Pov" Content="произведение: " HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar VerticalAlignment="Bottom" Height="35" BorderBrush="Gray" BorderThickness="0" FontSize="15">
+            <TextBlock Text="Номер задания: 1" Margin="10, 0, 0, 0"/>
+            <TextBlock Opacity="{Binding ElementName=pages, Path=SelectedIndex }" Text="Номер задания: 2" Margin="-127,0, 0, 0" Background="#FFF1EDED" />
+            <TextBlock x:Name="time" Text="00:00" Margin="100,0,0,0"/>
+            <Separator  HorizontalAlignment="Left" Margin="0, 5, 5, 5" />
+            <TextBlock x:Name="date" Text="01.01.2022" />
+        </StatusBar>
     </Grid>
 </Window>
