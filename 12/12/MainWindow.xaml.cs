@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace _12
 {
@@ -23,17 +24,26 @@ namespace _12
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+            DispatcherTimer refresh = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 0, 1, 0), IsEnabled = true };
+            refresh.Tick += Refresh;
+        }
+        private void Refresh(object sender, EventArgs e)
+        {
+            DateTime dateAndTime = DateTime.Now;
+            date.Text = dateAndTime.ToString("dd MMMM yyyy");
+            time.Text = dateAndTime.ToString(" HH: mm: ss");
         }
 
         private void Task1_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int lenghtA = Convert.ToInt32(textA.Text);
-                int lenghtB = Convert.ToInt32(textA.Text);
-                int lenghtC = Convert.ToInt32(textA.Text);
-                task1S.Content = "площадь: " + (2 * (lenghtA * lenghtB + lenghtB * lenghtC + lenghtC * lenghtA)).ToString();
-                task1V.Content = "обьём: " + (lenghtA * lenghtB * lenghtC).ToString();
+                double lenghtA = Convert.ToDouble(textA.Text);
+                double lenghtB = Convert.ToDouble(textB.Text);
+                double lenghtC = Convert.ToDouble(textC.Text);
+                task1S.Content = "площадь: " + Math.Round(2 * (lenghtA * lenghtB + lenghtB * lenghtC + lenghtC * lenghtA), 2).ToString();
+                task1V.Content = "обьём: " + Math.Round(lenghtA * lenghtB * lenghtC, 3).ToString();
             }
             catch
             {
@@ -47,9 +57,9 @@ namespace _12
             {
                 int count = Convert.ToInt32(task2Count.Text);
                 task2Sum.Content = "сумма: " + (count / 10 + count % 10).ToString();
-                task2Pov.Content = "произведение: " + (count / 10 * count % 10).ToString();
+                task2Pov.Content = "произведение: " + ((count / 10) * (count % 10)).ToString();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("вашша даннная не вернна");
             }
