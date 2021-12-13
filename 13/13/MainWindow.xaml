@@ -5,8 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_13"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+       Title="Практическая №13" Height="600" Width="600" MinHeight="600" MinWidth="600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*" MinWidth="400" />
+            <ColumnDefinition Width="180*" MinWidth="180"/>
+        </Grid.ColumnDefinitions>
 
+        <Menu VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2">
+            <MenuItem Header="Файл" Height="20" >
+                <MenuItem Header="Сохранить" Click="Save_Click"/>
+                <MenuItem Header="Открыть" Click="Open_Click"/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="О программе" Height="20" Click="Info_Click"/>
+        </Menu>
+        <ToolBar VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Margin="0, 19,-10,0">
+            <ToggleButton Height="30" Click="Save_Click" ToolTip="Сохранить">
+                <Image Source="img/S.png" />
+            </ToggleButton>
+            <ToggleButton Height="30" Click="Save_Click" ToolTip="открыть">
+                <Image Source="img/O.png" />
+            </ToggleButton>
+            <Separator/>
+            <Button Content="Очистить Поля" Click="Clear_Click"/>
+        </ToolBar>
+
+        <DataGrid x:Name="table" Grid.Column="0" Margin="30,55,30,40" SelectionUnit="Cell" CanUserAddRows="False" CanUserDeleteRows="False" CellEditEnding="Table_CellEditEnding" SelectedCellsChanged="table_SelectedCellsChanged" />
+
+
+        <StackPanel Grid.Column="1">
+            
+            <Grid>
+                <GroupBox Header="Исходные данные" Margin="0, 55, 30, 0">
+                    <GroupBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Очистить поля " Click="Clear_Click"></MenuItem>
+                        </ContextMenu>
+                    </GroupBox.ContextMenu>
+                    <StackPanel>
+                        <Label Content="Кол-во строк" VerticalAlignment="Top" HorizontalContentAlignment="Center" MinWidth="120" FontSize="16" Margin="10, 0, 10, 0"/>
+                        <TextBox x:Name="rowText" Text="5" VerticalAlignment="Top"  Height="30" HorizontalContentAlignment="Center" MinWidth="120" FontSize="16" Margin="10, 0, 10, 0"/>
+                        <Label Content="Кол-во столбцов" VerticalAlignment="Top" HorizontalContentAlignment="Center" MinWidth="120" FontSize="16" Margin="0, 0, 0, 0"/>
+                        <TextBox x:Name="columnText" Text="5" VerticalAlignment="Top"   Height="30" HorizontalContentAlignment="Center" Margin="10, 0, 10, 0" MinWidth="120" FontSize="16"/>
+                        <Button  Content="Отобразить" VerticalAlignment="Top" Height="30" MinWidth="120" Margin="10, 20, 10, 0" FontSize="16" Click="Show_Click"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+            <Grid Margin="0, 0, 30, 40">
+                <GroupBox Header="Результаты">
+                    <GroupBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Очистить поля" Click="Clear_Click"></MenuItem>
+                        </ContextMenu>
+                    </GroupBox.ContextMenu>
+                    <StackPanel>
+                        <Button  Content="Рассчитать" VerticalAlignment="Top" Height="30" MinWidth="120" Margin="10" FontSize="16" Click="Result_Click"/>
+                        <TextBox x:Name="result" VerticalContentAlignment="Center" Text="0" IsReadOnly="True" VerticalAlignment="Center" FontSize="20" ToolTip="первый из ее столбцов, содержащих только нечетные числа" MinWidth="120" Margin="10, 0, 10, 10" Height="30"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </StackPanel>
+
+            <StatusBar VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Height="30" Padding="10, 0, 0, 0">
+            <TextBlock x:Name="sizeText" Text="Размер таблицы: 0х0"/>
+            <Separator/>
+            <TextBlock x:Name="selectedText"  Text="Выбранная ячейка: 0х0" Margin="0,0,200,0"/>
+            <TextBlock x:Name="time" Text="00:00"/>
+            <TextBlock x:Name="date" Text="01.01.2022"/>
+        </StatusBar>
     </Grid>
 </Window>
