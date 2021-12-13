@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400*" MinWidth="400" />
-            <ColumnDefinition Width="180*" MinWidth="180"/>
+            <ColumnDefinition Width="180*" MinWidth="180" MaxWidth="250"/>
         </Grid.ColumnDefinitions>
 
         <Menu VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2">
@@ -21,10 +21,10 @@
             <MenuItem Header="О программе" Height="20" Click="Info_Click"/>
         </Menu>
         <ToolBar VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Margin="0, 19,-10,0">
-            <ToggleButton Height="30" Click="Save_Click" ToolTip="Сохранить">
+            <ToggleButton Height="30" Width="40" Click="Save_Click" ToolTip="Сохранить">
                 <Image Source="img/S.png" />
             </ToggleButton>
-            <ToggleButton Height="30" Click="Save_Click" ToolTip="открыть">
+            <ToggleButton Height="30" Width="40" Click="Open_Click" ToolTip="открыть">
                 <Image Source="img/O.png" />
             </ToggleButton>
             <Separator/>
@@ -37,7 +37,7 @@
         <StackPanel Grid.Column="1">
             
             <Grid>
-                <GroupBox Header="Исходные данные" Margin="0, 55, 30, 0">
+                <GroupBox Header="Исходные данные" Margin="0, 55, 20, 0">
                     <GroupBox.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Очистить поля " Click="Clear_Click"></MenuItem>
@@ -52,7 +52,7 @@
                     </StackPanel>
                 </GroupBox>
             </Grid>
-            <Grid Margin="0, 0, 30, 40">
+            <Grid Margin="0, 0, 20, 40">
                 <GroupBox Header="Результаты">
                     <GroupBox.ContextMenu>
                         <ContextMenu>
@@ -70,7 +70,7 @@
             <StatusBar VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Height="30" Padding="10, 0, 0, 0">
             <TextBlock x:Name="sizeText" Text="Размер таблицы: 0х0"/>
             <Separator/>
-            <TextBlock x:Name="selectedText"  Text="Выбранная ячейка: 0х0" Margin="0,0,200,0"/>
+            <TextBlock x:Name="selectedText"  Text="Выбранная ячейка: 0х0" Margin="0,0,150,0"/>
             <TextBlock x:Name="time" Text="00:00"/>
             <TextBlock x:Name="date" Text="01.01.2022"/>
         </StatusBar>

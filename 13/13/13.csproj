@@ -11,4 +11,10 @@
     <Folder Include="img\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="LibMas">
+      <HintPath>..\..\LibMas\LibMas\bin\Debug\netcoreapp3.1\LibMas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
