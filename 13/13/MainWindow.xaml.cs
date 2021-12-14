@@ -62,12 +62,7 @@ namespace _13
                 bool key = false;
                 for (int i = 0; i < _matrix.GetLength(1); i++)
                 {
-                    if (key)
-                    {
-                        index = i;
-                        break;
-                    }
-
+                    
                     key = true;
 
                     for (int j = 0; j < _matrix.GetLength(0); j++)
@@ -78,6 +73,12 @@ namespace _13
                             break;
                         }
                     }
+                    if (key)
+                    {
+                        index = i+1;
+                        break;
+                    }
+
                 }
 
                 result.Text = index.ToString();
