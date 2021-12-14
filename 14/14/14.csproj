@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_14</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="LibMas">
+      <HintPath>..\..\LibMas\LibMas\bin\Debug\netcoreapp3.1\LibMas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
