@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_14"
         mc:Ignorable="d"
-        Title="Практическая №13" Height="600" Width="600" MinHeight="600" MinWidth="600">
+        Title="Практическая №14" Height="600" Width="600" MinHeight="600" MinWidth="600" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400*" MinWidth="400" />
@@ -19,6 +19,7 @@
                 <MenuItem Header="Выход" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="О программе" Height="20" Click="Info_Click"/>
+            <MenuItem Header="Настройки" Height="20" Click="Setting_Click"/>
         </Menu>
         <ToolBar VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Margin="0, 19,-10,0">
             <ToggleButton Height="30" Width="40" Click="Save_Click" ToolTip="Сохранить">

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,6 +40,26 @@ namespace _14
             date.Text = dateAndTime.ToString("dd.MMMM.yyyy");
             time.Text = dateAndTime.ToString("HH:mm:ss");
         }
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Settings page;
+            if (_matrix == null) page = new Settings();
+            else page = new Settings(_matrix.GetLength(0), _matrix.GetLength(1));
+
+            page.ShowDialog();
+
+            _matrix = new int[page.RowCount, page.ColumnCount];
+            table.ItemsSource = VisualArray.ToDataTable(_matrix).DefaultView;
+            sizeText.Text = string.Format("Размер таблицы: {0}х{1}", page.RowCount, page.ColumnCount);
+            rowText.Text = page.RowCount.ToString();
+            columnText.Text = page.ColumnCount.ToString();
+
+            using (StreamWriter save = new StreamWriter("config.ini"))
+            {
+                save.WriteLine(page.RowCount);
+                save.WriteLine(page.ColumnCount);
+            }
+        }
         private void Show_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -52,6 +74,29 @@ namespace _14
             catch
             {
                 MessageBox.Show("вы ввели не верные данные");
+            }
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Thread.Sleep(50);
+            try
+            {
+                int rowCount;
+                int columnCount;
+                using (StreamReader open = new StreamReader("config.ini"))
+                {
+                    rowCount = Convert.ToInt32(open.ReadLine());
+                    columnCount = Convert.ToInt32(open.ReadLine());
+                }
+                _matrix = new int[rowCount, columnCount];
+                table.ItemsSource = VisualArray.ToDataTable(_matrix).DefaultView;
+                sizeText.Text = string.Format("Размер таблицы: {0}х{1}", rowCount, columnCount);
+                rowText.Text = rowCount.ToString();
+                columnText.Text = columnCount.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Последний конфиг не существует/поврежден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void Result_Click(object sender, RoutedEventArgs e)
