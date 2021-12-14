@@ -23,17 +23,30 @@ namespace _14
             pass.Focus();
         }
 
-        private void Closed_(object sender, EventArgs e)
-        {
-
-        }
-
         private void Vod_Click(object sender, RoutedEventArgs e)
         {
-
+            if (pass.Text == "123")
+            {
+                MainWindow window = new MainWindow();
+                this.Close();
+                window.Show();
+            }
+            else
+            {
+                MessageBox.Show("пароль не верен");
+            }
         }
         private void Closed_Click(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Vod_Click(sender, e);
+            }
         }
     }
 }

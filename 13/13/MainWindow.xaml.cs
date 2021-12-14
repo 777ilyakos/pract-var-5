@@ -169,7 +169,6 @@ namespace _13
         {
             rowText.Text = "0";
             columnText.Text = "0";
-            //inputValue.Text = "0";
         }
 
     }

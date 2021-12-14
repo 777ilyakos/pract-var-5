@@ -28,10 +28,6 @@ namespace _14
         {
             InitializeComponent();
 
-            Password password = new Password();
-            //password.Owner = this;
-            password.ShowDialog();
-
             this.DataContext = this;
             DispatcherTimer refresh = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1), IsEnabled = true };
             refresh.Tick += Refresh;
